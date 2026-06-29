@@ -6,14 +6,18 @@ public class Main {
         System.out.print("Enter the day of the week: ");
         String day = sc.nextLine();
 
-        switch(day){
-            case "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" ->
-                System.out.println(day + " is a weekday.");
-            case "Saturday", "Sunday" ->
-                System.out.println(day + " is a weekend.");
-            default ->
-                System.out.println("Invalid day of the week.");
+        int age = 0;
+
+        System.out.print("Enter your age: ");
+        age = sc.nextInt();
+
+        while (age < 0) {
+            System.out.println("Age cannot be negative. Please enter a valid age.");
+            System.out.print("Enter your age: ");
+            age = sc.nextInt();
         }
+
+        System.out.println("Your age is: " + age);
         sc.close();
         
     }
