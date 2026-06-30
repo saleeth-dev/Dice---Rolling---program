@@ -1,33 +1,21 @@
 import java.util.Scanner;
-import java.util.Random;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException{
 
-        Random random = new Random();
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
-        int guess;
-        int attempts = 0;
-        int min = 1;
-        int max = 100;
-        int randomNumber = random.nextInt(min, max + 1);
+        System.out.println("How many seconds to countdown from?: ");
+        int start = sc.nextInt();
 
-        System.out.println("Number Guessing Game");
-        System.out.printf("Guess a number between %d-%d\n", min, max);
+        for(int i = start; i > 0; i--){
+            System.out.println(i);
+            Thread.sleep(1000);
+        }
 
-        do{
-            System.out.print("Enter a guess: ");
-            guess = scanner.nextInt();
-            attempts++;
+        System.out.println("HAPPY NEW YEAR");
 
-            if(guess < randomNumber){
-                System.out.println("Too low! Try again.");
-            } else if(guess > randomNumber){
-                System.out.println("Too high! Try again.");
-            } else {
-                System.out.printf("Correct! You guessed the number in %d attempts.\n", attempts);
-            }
-        } while(guess != randomNumber);
-        scanner.close();
+        sc.close();
+
     }
 }
