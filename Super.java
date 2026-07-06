@@ -1,29 +1,22 @@
-import java.util.Scanner;
 
 public class Super {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+       
+    int[] numbers = {3, 5, 9, 2, 8, 4};
+    int target = 12;
+    boolean isFound = false;
 
-        String[] foods;
-        int size;
-
-        System.out.print("Enter the number of food items: ");
-        size = scanner.nextInt();
-        scanner.nextLine(); // Consume the newline character
-
-        foods = new String[size];
-
-        for(int i = 0; i < foods.length; i++) {
-            System.out.print("Enter a food item: ");
-            foods[i] = scanner.nextLine();
+    for(int i = 0; i < numbers.length; i++) {
+        if(target == numbers[i]) {
+            System.out.println("Found the target number: " + i);
+            isFound = true;
+            break;
         }
-
-        for(String food : foods) {
-            System.out.println(food);
-        }
-
-
-
-        scanner.close();
     }
+
+    if(!isFound) {
+        System.out.println("Element is notfound in the array.");
+    }
+    
+}
 }
