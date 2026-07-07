@@ -2,14 +2,19 @@
 public class Super {
     public static void main(String[] args) {
 
-        System.out.println(average(1, 2, 3, 4));
-    
-}
-static double average(double... numbers) {
-        double sum = 0;
-        for (double number : numbers) {
-            sum += number;
+        String[] fruits = {"apple", "orange", "banana"};
+        String[] vegetables = {"carrot", "broccoli", "spinach"};
+        String[] meats = {"chicken", "beef", "pork"};
+
+        String[][] groceries = {fruits, vegetables, meats};
+
+        groceries[0][0] = "pineapple"; 
+        groceries[2][0] = "goat";
+        for(String[] foods : groceries){
+            for(String food : foods){
+                System.out.print(food + " ");
+            }
+            System.out.println(); // Print a blank line between categories
         }
-        return sum / numbers.length;
     }
 }
